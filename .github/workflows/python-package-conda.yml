@@ -34,7 +34,7 @@ jobs:
     - name: Test with pytest
       run: |
         conda install pytest
-        pytest
+        pytest tests
     - name: Attest
       uses: actions/attest-build-provenance@v2
       with:
