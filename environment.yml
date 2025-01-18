@@ -1,0 +1,10 @@
+name: base
+dependencies:
+  - python=3.8
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - scikit-learn
+  - pip:
+    - some-package
