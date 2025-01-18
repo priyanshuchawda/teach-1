@@ -1,0 +1,27 @@
+// String Manipulation Flowchart
+digraph {
+	graph [rankdir=TB]
+	A [label=Start shape=oval]
+	B [label="str1 = \"Bharat Mata ki Jay!!!\"" shape=rectangle]
+	C [label="Upper_lambda = lambda string: string.upper()" shape=rectangle]
+	D [label="result1 = Upper_lambda(str1)" shape=rectangle]
+	E [label="print(result1)" shape=rectangle]
+	A -> B
+	B -> C
+	C -> D
+	D -> E
+	F [label=Start shape=oval]
+	G [label="starts_with = lambda string: True if string.startswith('P') else False" shape=rectangle]
+	H [label="result2_1 = starts_with(\"PES's\")" shape=rectangle]
+	I [label="print(result2_1)" shape=rectangle]
+	J [label="result2_2 = starts_with('MCOE')" shape=rectangle]
+	K [label="print(result2_2)" shape=rectangle]
+	L [label=End shape=oval]
+	F -> G
+	G -> H
+	H -> I
+	I -> J
+	J -> K
+	E -> F [label="Next Snippet"]
+	K -> L
+}

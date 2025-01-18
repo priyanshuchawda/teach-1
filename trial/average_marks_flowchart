@@ -1,0 +1,36 @@
+digraph AverageMarksFlowchart {
+	Start [label=Start shape=ellipse]
+	Initialize [label="Initialize Variables
+- total_marks = 0
+- num_students = 0" shape=rectangle]
+	OpenFile [label="Open Input File
+Open students.txt in read mode" shape=rectangle]
+	CheckLines [label="Are there lines in the file to process?" shape=diamond]
+	ProcessLine [label="Process Line
+Read a line and strip unnecessary spaces
+Split the line into name, age, and marks" shape=rectangle]
+	ValidateFormat [label="Is the line properly formatted (contains 3 parts)?" shape=diamond]
+	UpdateVariables [label="Update Variables
+Convert marks to an integer or float
+Add marks to total_marks
+Increment num_students by 1" shape=rectangle]
+	CalculateAverage [label="Calculate Average Marks
+If num_students > 0, calculate:
+average_marks = total_marks / num_students
+Otherwise, set average_marks = 0" shape=rectangle]
+	WriteOutput [label="Write to Output File
+Open average_marks.txt in write mode
+Write: \"Average Marks: {average_marks:.2f}\"" shape=rectangle]
+	End [label=End shape=ellipse]
+	Start -> Initialize
+	Initialize -> OpenFile
+	OpenFile -> CheckLines
+	CheckLines -> ProcessLine [label=Yes]
+	CheckLines -> CalculateAverage [label=No]
+	ProcessLine -> ValidateFormat
+	ValidateFormat -> UpdateVariables [label=Yes]
+	ValidateFormat -> CheckLines [label=No]
+	UpdateVariables -> CheckLines
+	CalculateAverage -> WriteOutput
+	WriteOutput -> End
+}

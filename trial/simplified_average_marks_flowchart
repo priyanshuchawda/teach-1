@@ -1,0 +1,28 @@
+digraph SimplifiedAverageMarksFlowchart {
+	Start [label=Start shape=ellipse]
+	OpenFile [label="Open students.txt File" shape=rectangle]
+	Initialize [label="Initialize Variables
+- total_marks = 0
+- student_count = 0" shape=rectangle]
+	ReadLine [label="Read Each Line" shape=rectangle]
+	CheckValid [label="Is Line Valid? (3 parts: name, age, marks)" shape=diamond]
+	UpdateVars [label="Update Variables
+- total_marks += marks
+- student_count += 1" shape=rectangle]
+	CalculateAvg [label="Calculate Average Marks
+If student_count > 0:
+  average_marks = total_marks / student_count
+Else:
+  average_marks = 0" shape=rectangle]
+	WriteOutput [label="Write Average Marks to average_marks.txt" shape=rectangle]
+	End [label=End shape=ellipse]
+	Start -> OpenFile
+	OpenFile -> Initialize
+	Initialize -> ReadLine
+	ReadLine -> CheckValid
+	CheckValid -> UpdateVars [label=Yes]
+	CheckValid -> CalculateAvg [label=No]
+	UpdateVars -> ReadLine
+	CalculateAvg -> WriteOutput
+	WriteOutput -> End
+}

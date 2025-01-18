@@ -1,0 +1,42 @@
+// String Manipulation Flowchart (Improved Snippet 2)
+digraph {
+	graph [rankdir=TB]
+	A [label="Start Snippet 1" shape=oval]
+	B [label="Initialize String" shape=rectangle]
+	C [label="Define Uppercase Lambda" shape=rectangle]
+	D [label="Call Uppercase Lambda" shape=rectangle]
+	E [label="Print Uppercase Result" shape=rectangle]
+	A -> B
+	B -> C
+	C -> D
+	D -> E
+	F [label="Start Snippet 2" shape=oval]
+	G [label="Define Starts With Lambda" shape=rectangle]
+	H1 [label="Call Starts With Lambda with \"PES's\"" shape=rectangle]
+	D1 [label="Does \"PES's\" start with \"P\"?" shape=diamond]
+	I1_yes [label="Return True" shape=rectangle]
+	I1_no [label="Return False" shape=rectangle]
+	J1 [label="Print Result (True)" shape=rectangle]
+	H2 [label="Call Starts With Lambda with \"MCOE\"" shape=rectangle]
+	D2 [label="Does \"MCOE\" start with \"P\"?" shape=diamond]
+	K1_yes [label="Return True" shape=rectangle]
+	K1_no [label="Return False" shape=rectangle]
+	L1 [label="Print Result (False)" shape=rectangle]
+	M [label=End shape=oval]
+	F -> G
+	G -> H1
+	H1 -> D1
+	D1 -> I1_yes [label=Yes]
+	D1 -> I1_no [label=No]
+	I1_yes -> J1
+	I1_no -> J1
+	G -> H2
+	H2 -> D2
+	D2 -> K1_yes [label=Yes]
+	D2 -> K1_no [label=No]
+	K1_yes -> L1
+	K1_no -> L1
+	E -> F [label="Next Snippet"]
+	J1 -> M
+	L1 -> M
+}

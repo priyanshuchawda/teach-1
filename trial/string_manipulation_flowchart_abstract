@@ -1,0 +1,27 @@
+// String Manipulation Flowchart (Abstract)
+digraph {
+	graph [rankdir=TB]
+	A [label="Start Snippet 1" shape=oval]
+	B [label="Initialize String" shape=rectangle]
+	C [label="Define Uppercase Lambda Function" shape=rectangle]
+	D [label="Call Uppercase Lambda" shape=rectangle]
+	E [label="Print Uppercase Result" shape=rectangle]
+	A -> B
+	B -> C
+	C -> D
+	D -> E
+	F [label="Start Snippet 2" shape=oval]
+	G [label="Define Starts With Lambda Function" shape=rectangle]
+	H [label="Call Starts With Lambda with \"PES's\"" shape=rectangle]
+	I [label="Print Result (Starts with \"P\"? - \"PES's\")" shape=rectangle]
+	J [label="Call Starts With Lambda with \"MCOE\"" shape=rectangle]
+	K [label="Print Result (Starts with \"P\"? - \"MCOE\")" shape=rectangle]
+	L [label=End shape=oval]
+	F -> G
+	G -> H
+	H -> I
+	I -> J
+	J -> K
+	E -> F [label="Next Snippet"]
+	K -> L
+}

@@ -1,0 +1,46 @@
+// Stack Operations Flowchart
+digraph {
+	graph [rankdir=TB]
+	A [label=Start shape=oval]
+	B [label="stack = []" shape=rectangle]
+	C [label="Display Menu" shape=parallelogram]
+	D [label="Get User Choice" shape=input]
+	E1 [label="Choice == \"1\"?" shape=diamond]
+	F1 [label="Get Item to Push" shape=input]
+	G1 [label="stack.append(item)" shape=rectangle]
+	H1 [label="Print \"Item pushed\"" shape=output]
+	E2 [label="Choice == \"2\"?" shape=diamond]
+	F2 [label="len(stack) > 0?" shape=diamond]
+	G2 [label="item = stack.pop()" shape=rectangle]
+	H2 [label="Print \"Item popped\"" shape=output]
+	I2 [label="Print \"Stack is empty\"" shape=output]
+	E3 [label="Choice == \"3\"?" shape=diamond]
+	F3 [label="Print \"Current Stack\"" shape=output]
+	E4 [label="Choice == \"4\"?" shape=diamond]
+	F4 [label="Print \"Exiting\"" shape=output]
+	G4 [label=End shape=oval]
+	X [label="Print \"Invalid Choice\"" shape=output]
+	A -> B
+	B -> C
+	C -> D
+	D -> E1
+	E1 -> F1 [label=Yes]
+	F1 -> G1
+	G1 -> H1
+	H1 -> C
+	E1 -> E2 [label=No]
+	E2 -> F2 [label=Yes]
+	F2 -> G2 [label=Yes]
+	G2 -> H2
+	H2 -> C
+	F2 -> I2 [label=No]
+	I2 -> C
+	E2 -> E3 [label=No]
+	E3 -> F3 [label=Yes]
+	F3 -> C
+	E3 -> E4 [label=No]
+	E4 -> F4 [label=Yes]
+	F4 -> G4
+	E4 -> X [label=No]
+	X -> C
+}
