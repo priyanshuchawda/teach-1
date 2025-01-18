@@ -6,5 +6,6 @@ dependencies:
   - scipy
   - matplotlib
   - scikit-learn
+  - conda=24.11
   - pip:
     - some-package
