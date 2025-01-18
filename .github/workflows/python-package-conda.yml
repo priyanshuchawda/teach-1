@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 5
+    permissions:
+      id-token: write
+      attestations: write
 
     steps:
     - uses: actions/checkout@v4
@@ -32,3 +35,7 @@ jobs:
       run: |
         conda install pytest
         pytest
+    - name: Attest
+      uses: actions/attest-build-provenance@v2
+      with:
+        subject-path: '${{ github.workspace }}/my-app'
