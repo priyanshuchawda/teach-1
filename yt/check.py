@@ -3,8 +3,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 
 # Replace with your API key
 API_KEY = "api key"
-PLAYLIST_ID = "playlist ket
-y"
+PLAYLIST_ID = "playlist key"
 
 def get_video_ids(api_key, playlist_id):
     youtube = build('youtube', 'v3', developerKey=api_key)
