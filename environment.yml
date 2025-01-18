@@ -9,4 +9,4 @@ dependencies:
   - conda=24.11
   - pip:
     - some-package
-    
+
