@@ -51,3 +51,33 @@ jobs:
         with:
           subject-path: '${{ github.workspace }}/my-app'
 ```
+
+## Flake8 Installation and Usage
+
+To ensure code quality and consistency, we use `flake8` for linting. Follow the steps below to install and use `flake8` in your project.
+
+### Installation
+
+1. Add `flake8` to your `environment.yml` file under the `dependencies` section:
+
+```yaml
+dependencies:
+  - flake8
+```
+
+2. Install the dependencies using conda:
+
+```sh
+conda env update --file environment.yml --name base
+```
+
+### Usage
+
+To run `flake8` and check your code for issues, use the following commands:
+
+```sh
+flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+```
+
+These commands will check your code for syntax errors, undefined names, and other issues, and provide statistics on the results.

@@ -7,5 +7,6 @@ dependencies:
   - matplotlib
   - scikit-learn
   - conda=24.11
+  - flake8
   - pip:
     - some-package
