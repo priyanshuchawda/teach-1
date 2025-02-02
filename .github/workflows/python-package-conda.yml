@@ -24,6 +24,10 @@ jobs:
     - name: Install dependencies
       run: |
         conda env update --file environment.yml --name base
+    - name: Verify flake8 installation
+      run: flake8 --version
+    - name: Activate conda environment
+      run: source activate base
     - name: Lint with flake8
       run: |
         conda install flake8
