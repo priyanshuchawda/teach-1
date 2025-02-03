@@ -49,7 +49,7 @@ jobs:
       - name: Attest
         uses: actions/attest-build-provenance@v2
         with:
-          subject-path: '${{ github.workspace }}/my-app'
+          subject-path: '${{ github.workspace }}/path-to-artifact'
 ```
 
 ## Flake8 Installation and Usage
